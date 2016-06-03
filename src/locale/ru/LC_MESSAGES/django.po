@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+
+msgid "earth"
+msgstr "емля"
+
+msgid "sun"
+msgstr "солнце"
+
+msgid "moon"
+msgstr "луна"
+
+msgid "saturn"
+msgstr "сатурн"
+
+msgid "jupiter"
+msgstr "юпитер"
+
+msgid "mars"
+msgstr "марс"
+
+msgid "venus"
+msgstr "венера"
+
+msgid "mercury"
+msgstr "меркурий"
+
+
+
+msgid "Aries"
+msgstr "Овен"
+
+msgid "Taurus"
+msgstr "Телец"
+
+msgid "Gemini"
+msgstr "Близнецы"
+
+msgid "Cancer"
+msgstr "Рак"
+
+msgid "Leo"
+msgstr "Лев"
+
+msgid "Virgo"
+msgstr "Дева"
+
+msgid "Libra"
+msgstr "Весы"
+
+msgid "Scorpio"
+msgstr "Скорпион"
+
+msgid "Sagittarius"
+msgstr "Стрелец"
+
+msgid "Capricorn"
+msgstr "Козерог"
+
+msgid "Aquarius"
+msgstr "Водолей"
+
+msgid "Pisces"
+msgstr "Рыбы"
