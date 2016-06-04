@@ -21,6 +21,11 @@ sector = math.pi * 2 / sector_num
 delta = sector / 2
 
 
+def home(ecliptic_longtitude_radian):
+    sector_index = int(ecliptic_longtitude_radian / sector)
+    return names[sector_index]
+
+
 def borders(ecliptic_longtitude_radian):
 
     sector_index = int(ecliptic_longtitude_radian / sector)
