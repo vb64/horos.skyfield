@@ -2,7 +2,7 @@ import datetime
 
 from skyfield.api import load, utc
 from planets import earth, Planet, get as get_planet, name as name_planet
-from zodiac import borders
+from zodiac import borders, home
 
 # mars - Pisces Aquarius
 # saturn - Aquarius Capricorn
@@ -31,39 +31,56 @@ horo_planets = [
 def at_date(dt, from_location=None):
     """
 
-    >>> p = at_date(datetime.datetime(2016, 6, 4))
+    >>> p = at_date(datetime.datetime(2016, 6, 4, 11, 16))
+ 
     >>> p['sun']
-    'Taurus Gemini'
+    ('Gemini', 'Taurus Gemini')
+
     >>> p['moon']
-    'Taurus Gemini'
-    >>> p['mars']
-    'Scorpio Sagittarius'
-    >>> p['saturn']
-    'Scorpio Sagittarius'
-    >>> p['jupiter']
-    'Leo Virgo'
-    >>> p['venus']
-    'Taurus Gemini'
+    ('Gemini', 'Taurus Gemini')
+
     >>> p['mercury']
-    'Taurus Gemini'
+    ('Taurus', 'Taurus Gemini')
+
+    >>> p['venus']
+    ('Gemini', 'Taurus Gemini')
+
+    >>> p['mars']
+    ('Scorpio', 'Scorpio Sagittarius')
+
+    >>> p['jupiter']
+    ('Virgo', 'Leo Virgo')
+
+    >>> p['saturn']
+    ('Sagittarius', 'Scorpio Sagittarius')
+
     >>> p['uranus']
-    'Aries Taurus'
+    ('Aries', 'Aries Taurus')
+
     >>> p['neptune']
-    'Aquarius Pisces'
+    ('Pisces', 'Aquarius Pisces')
+
     >>> p['pluto']
-    'Capricorn Aquarius'
+    ('Capricorn', 'Capricorn Aquarius')
+
+
 
     >>> p = at_date(datetime.datetime(1168, 4, 26))
+
     >>> p['mars']
-    'Aquarius Pisces'
+    ('Aquarius', 'Aquarius Pisces')
+
     >>> p['saturn']
-    'Aquarius Capricorn'
+    ('Aquarius', 'Aquarius Capricorn')
+
     >>> p['jupiter']
-    'Pisces Aries'
+    ('Aries', 'Pisces Aries')
+
     >>> p['venus']
-    'Aries Taurus'
+    ('Taurus', 'Aries Taurus')
+
     >>> p['mercury']
-    'Aries Taurus'
+    ('Taurus', 'Aries Taurus')
 
     """
 
@@ -76,7 +93,10 @@ def at_date(dt, from_location=None):
         position = from_point.observe(get_planet(p)).apparent()
         lat, lon, distance = position.ecliptic_latlon()
         # print name_planet(p), lon.radians
-        result[name_planet(p)] = ' '.join(borders(lon.radians))
+        result[name_planet(p)] = (
+            home(lon.radians),
+            ' '.join(borders(lon.radians))
+        )
 
     return result
 
