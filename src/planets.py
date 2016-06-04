@@ -12,6 +12,10 @@ class Planet:
     VENUS = "venus"
     MERCURY = "mercury"
 
+    URANUS = "uranus BARYCENTER"
+    NEPTUNE = "neptune BARYCENTER"
+    PLUTO = "pluto BARYCENTER"
+
 
 data = load('de422.bsp')
 earth = data[Planet.EARTH]
